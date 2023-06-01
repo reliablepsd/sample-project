@@ -1,0 +1,297 @@
+@import "scss/include-media.scss";
+
+:root {
+	--gutter: 30px;
+	--rem-base: 10px;
+
+	@include media("<=phone") {
+		--gutter: 15px;
+	}
+}
+
+@import "scss/norm-lite";
+@import "scss/typography";
+@import "scss/animation";
+@import "scss/accordion";
+
+//------------------- common
+.text-c {
+	text-align: center;
+}
+
+//------------------- footer to bottom
+html,
+body {
+	height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+//------------------- container
+.container {
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding-left: var(--gutter);
+	padding-right: var(--gutter);
+
+	&._xs {
+		max-width: 840px;
+	}
+}
+
+// fix bug on some flex block (see example with slider swiper)
+main {
+	min-width: 0;
+}
+
+//------------------- header
+header {
+	padding: 3rem 0;
+	position: sticky;
+	top: -1px;
+	background-color: #fff;
+	z-index: 999;
+	transition: all 0.3s ease;
+
+	&.isSticky {
+		box-shadow: 0px 0px 3px rgba(#000000, 0.3);
+		padding: 2.5rem 0;
+	}
+}
+
+.header-c {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	grid-gap: 30px;
+}
+
+//------------------- main section
+.hero-s {
+	padding: 4rem 0;
+}
+
+.hero-c {
+	display: grid;
+	grid-template-columns: minmax(30rem, 66rem) auto;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: 30px 5rem;
+
+	@include media("<=desktop") {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include media("<=tablet") {
+		grid-template-columns: 1fr;
+		text-align: center;
+
+		img {
+			max-width: 50%;
+		}
+	}
+
+}
+
+.bg-blue {
+	--bg-size: 38%;
+	background: #E0EFF2;
+	position: relative;
+	margin-top: calc(var(--bg-size) - 14rem);
+	padding-bottom: 10%;
+	padding-top: 10px;
+
+	.container {
+		margin-top: -9%;
+	}
+
+	&:before {
+		content: "";
+		z-index: -1;
+		position: absolute;
+		top: 1px;
+		left: 0px;
+		right: 0px;
+		padding-top: var(--bg-size);
+		transform: translateY(-100%);
+		background-image: url("../img/bg1-t.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+}
+
+.img-mb {
+	margin-bottom: 6rem;
+
+	@include media("<=desktop") {
+		max-width: 50%;
+	}
+}
+
+.bg-gray {
+	background: #F8F8F8;
+	--bg-size-t: 6%;
+	--bg-size-b: 7%;
+	position: relative;
+	padding-top: 10rem;
+	padding-bottom: 27rem;
+	margin-top: 0;
+	margin-bottom: var(--bg-size-b);
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 1px;
+		left: 0px;
+		right: 0px;
+		padding-top: var(--bg-size-t);
+		transform: translateY(-100%);
+		background-image: url("../img/bg2-t.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 1px;
+		left: 0px;
+		right: 0px;
+		padding-top: var(--bg-size-b);
+		transform: translateY(100%);
+		background-image: url("../img/bg2-b.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+}
+
+.grid-c-img {
+	margin-bottom: 4rem;
+	display: inline-flex;
+	align-items: center;
+	min-height: 34rem;
+
+	@include media("<=phone") {
+		min-height: 100px;
+	}
+}
+
+.block {
+	--bg-size-t: 5%;
+	padding: 3rem 0 5rem;
+	display: grid;
+	align-items: center;
+	min-height: 37rem;
+	background-color: #E0EFF2;
+	margin-top: var(--bg-size-t);
+	position: relative;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 1px;
+		left: 0px;
+		right: 0px;
+		padding-top: var(--bg-size-t);
+		transform: translateY(-100%);
+		background-image: url("../img/bg3-t.png");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+}
+
+.img-s {
+	margin-top: -30rem;
+	padding: 4rem 0 12rem;
+}
+
+.f-img {
+	margin-bottom: 10rem;
+
+	img {
+		width: 100%;
+	}
+}
+
+.img-slider-wrapper {
+	--swiper-pagination-bullet-size: 10px;
+	--swiper-navigation-top-offset: 43%;
+	position: relative;
+
+	@include media("<=1420px") {
+		padding: 0 4rem;
+	}
+
+	.swiper {
+		padding-bottom: 6.5rem;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+html {
+
+	.swiper-button-prev-img,
+	.swiper-button-next-img {
+		--swiper-navigation-size: 19px;
+		color: #000000;
+		width: 17px;
+		height: 19px;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		&:after {
+			font-size: 0;
+		}
+
+	}
+
+	.swiper-button-prev-img {
+		left: -3rem;
+		background-image: url("data:image/svg+xml,%3Csvg width='19' height='17' viewBox='0 0 19 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.91667 -3.46049e-07L-3.96081e-07 7.93873L-3.47013e-07 9.06127L7.91667 17L9.03608 15.8775L2.47158 9.29467L19 9.29467L19 7.70692L2.47 7.70692L9.03608 1.12412L7.91667 -3.46049e-07Z' fill='black'/%3E%3C/svg%3E%0A");
+
+		@include media("<=1420px") {
+			left: 0px;
+		}
+	}
+
+	.swiper-button-next-img {
+		right: -3rem;
+		background-image: url("data:image/svg+xml,%3Csvg width='19' height='17' viewBox='0 0 19 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.0833 17L19 9.06127L19 7.93873L11.0833 -3.46049e-07L9.96392 1.12254L16.5284 7.70533L-3.36811e-07 7.70533L-4.06213e-07 9.29308L16.53 9.29308L9.96392 15.8759L11.0833 17Z' fill='black'/%3E%3C/svg%3E%0A");
+
+		@include media("<=1420px") {
+			right: 0px;
+		}
+	}
+}
+
+//------------------- footer
+footer {
+	padding: 3rem 0;
+	background: #161613;
+	color: #fff;
+}
+
+.footer-c {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	grid-gap: 3rem;
+
+	@include media("<=phone-sm") {
+		flex-direction: column;
+	}
+}
+
+@import "scss/swiper";

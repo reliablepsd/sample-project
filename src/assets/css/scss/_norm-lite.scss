@@ -1,0 +1,26 @@
+//------------------- normalize
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+img {
+	border-style: none;
+}
+
+//------------------- box-sizing for all element
+* {
+	box-sizing: inherit;
+
+	&:after,
+	&:before {
+		box-sizing: inherit;
+	}
+}
+
+html {
+	box-sizing: border-box;
+}
