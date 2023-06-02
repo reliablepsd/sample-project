@@ -67,7 +67,6 @@ function initSlider() {
 
 // custom function
 function headerSticky() {
-	console.log('123');
 	const stickyElm = document.querySelector("header");
 
 	var observer = new IntersectionObserver(
