@@ -111,6 +111,7 @@ img {
   transition: all 0.3s ease-out;
   padding: 13px 30px;
   font-size: 15px;
+  font-weight: 700;
   border-radius: 4px;
   border-width: 2px;
   line-height: 1;
@@ -224,7 +225,7 @@ body {
   padding-right: var(--gutter);
 }
 .container._xs {
-  max-width: 840px;
+  max-width: 875px;
 }
 
 main {
@@ -325,13 +326,14 @@ header.isSticky {
   background-image: url("../img/bg2-b.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  z-index: -1;
 }
 
 .grid-c-img {
   margin-bottom: 4rem;
-  display: inline-flex;
-  align-items: center;
-  min-height: 34rem;
+}
+.grid-c-img img {
+  height: 34rem;
 }
 
 .block {
@@ -360,6 +362,7 @@ header.isSticky {
 .img-s {
   margin-top: -30rem;
   padding: 4rem 0 12rem;
+  position: relative;
 }
 
 .f-img {
@@ -378,6 +381,12 @@ header.isSticky {
   padding-bottom: 6.5rem;
   width: 100%;
   max-width: 100%;
+}
+
+.img-slider .swiper-slide p {
+  max-width: 39rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 html .swiper-button-prev-img,
@@ -1270,9 +1279,6 @@ swiper-container .swiper-notification {
   }
   html {
     font-size: calc(var(--rem-base) - 3.5px);
-  }
-  .grid-c-img {
-    min-height: 100px;
   }
 }
 
