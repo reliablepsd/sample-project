@@ -2,9 +2,10 @@
 	will-change: transform;
 }
 .a-hidden {
-	opacity: 1;
+	opacity: 0;
 }
 .animated {
+	opacity: 1;
 	animation-duration: 1s;
 	animation-fill-mode: both;
 }
