@@ -293,10 +293,29 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 	grid-gap: 3rem;
+	> * {
+		flex-basis: 33.33%;
+		width: 33.33%;
+		flex-grow: 1;
+	}
+	> * {
+		flex-basis: 33.33%;
+		width: 33.33%;
+		flex-grow: 1;
+		@include media("<=phone-sm") {
+			text-align: center;
+		}
+	}
 
 	@include media("<=phone-sm") {
 		flex-direction: column;
 	}
 }
 
+.footer-logo {
+	text-align: center;
+}
+.footer-email {
+	text-align: right;
+}
 @import "scss/swiper";

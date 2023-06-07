@@ -433,6 +433,24 @@ footer {
   align-items: center;
   grid-gap: 3rem;
 }
+.footer-c > * {
+  flex-basis: 33.33%;
+  width: 33.33%;
+  flex-grow: 1;
+}
+.footer-c > * {
+  flex-basis: 33.33%;
+  width: 33.33%;
+  flex-grow: 1;
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-email {
+  text-align: right;
+}
 
 /**
  * Swiper 9.3.2
@@ -1293,6 +1311,9 @@ swiper-container .swiper-notification {
 }
 
 @media (max-width: 480px) {
+  .footer-c > * {
+    text-align: center;
+  }
   .footer-c {
     flex-direction: column;
   }

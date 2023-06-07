@@ -547,6 +547,27 @@ footer {
           align-items: center;
   grid-gap: 3rem;
 }
+.footer-c > * {
+  -ms-flex-preferred-size: 33.33%;
+      flex-basis: 33.33%;
+  width: 33.33%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.footer-c > * {
+  -ms-flex-preferred-size: 33.33%;
+      flex-basis: 33.33%;
+  width: 33.33%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@media (max-width: 480px) {
+  .footer-c > * {
+    text-align: center;
+  }
+}
 @media (max-width: 480px) {
   .footer-c {
     -webkit-box-orient: vertical;
@@ -554,6 +575,14 @@ footer {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-email {
+  text-align: right;
 }
 
 /**
