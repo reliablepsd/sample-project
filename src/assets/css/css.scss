@@ -112,8 +112,15 @@ header {
 	padding-bottom: 10%;
 	padding-top: 10px;
 
+	@include media(">full") {
+		--bg-size: 25%;
+	}
+
 	.container {
 		margin-top: -9%;
+		@include media(">full") {
+			margin-top: -5%;
+		}
 	}
 
 	&:before {

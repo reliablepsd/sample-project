@@ -364,8 +364,18 @@ header.isSticky {
   padding-bottom: 10%;
   padding-top: 10px;
 }
+@media (min-width: 1921px) {
+  .bg-blue {
+    --bg-size: 25%;
+  }
+}
 .bg-blue .container {
   margin-top: -9%;
+}
+@media (min-width: 1921px) {
+  .bg-blue .container {
+    margin-top: -5%;
+  }
 }
 .bg-blue:before {
   content: "";
