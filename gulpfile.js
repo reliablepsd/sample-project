@@ -13,7 +13,7 @@ function styles() {
 			// Queries order see on https://www.npmjs.com/package/postcss-sort-media-queries
 		})
 	];
-  return gulp.src('./src/assets/css/css.scss')
+  return gulp.src('./src/assets/css/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(gpostcss(postcssPlugins))
@@ -27,7 +27,7 @@ function copyimg(cb) {
 }
 
 function copyjs(cb) {
-	gulp.src(['./src/assets/js/**/*.*'])
+	gulp.src(['./src/assets/js/**/*.js'])
 	.pipe(gulp.dest('./docs/assets/js/'));
 	cb();
 }

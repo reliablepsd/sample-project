@@ -1,9 +1,8 @@
 jQuery(function() {
-	headerSticky();
+	initStickyHeader ();
 	isElementExist('.simple-accordion', initAccordion);
-	isElementExist('.simple-accordion', initSlider);
-
-	if (document.documentElement.clientWidth > 1024) {
+	isElementExist('.img-slider', initSlider);
+	if (window.matchMedia("(min-width: 1024px) and (hover: hover) and (pointer: fine)").matches) {
 		viewportCheckerAnimate();
 	}
 });
@@ -66,7 +65,7 @@ function initSlider() {
 }
 
 // custom function
-function headerSticky() {
+function initStickyHeader() {
 	const stickyElm = document.querySelector("header");
 
 	var observer = new IntersectionObserver(
